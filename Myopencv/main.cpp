@@ -229,13 +229,31 @@ int _Log_Enhance_() {//对数Log变换的图像增强
 
 
 int _Gamma_Enhance_() {//伽马变换增强图像对比度
-	
+	Mat image = imread("007.jpg");
+	if (image.empty()) {
+		cout << "打开图像失败，请重新检查！" << endl;
+		return -1;
+	}
+	imshow("原图",image);
+	Mat imageGama(image.size(),CV_32FC3);
+	for (int i = 0; i < image.rows; i++) {
+		for (int j = 0; j < image.cols; j++) {
+			imageGama.at<Vec3f>(i, j)[0] = image.at<Vec3b>(i, j)[0] * image.at<Vec3b>(i, j)[0] * image.at<Vec3b>(i, j)[0];
+			imageGama.at<Vec3f>(i, j)[1] = image.at<Vec3b>(i, j)[1] * image.at<Vec3b>(i, j)[1] * image.at<Vec3b>(i, j)[1];
+			imageGama.at<Vec3f>(i, j)[2] = image.at<Vec3b>(i, j)[2] * image.at<Vec3b>(i, j)[2] * image.at<Vec3b>(i, j)[2];
+		}
+	}
+	normalize(imageGama,imageGama,0,255,CV_MINMAX);
+	convertScaleAbs(imageGama,imageGama);
+	imshow("伽马变换图像增强效果",imageGama);
+	waitKey();
+	return 0;
 }
 
 
 int main()
 {
-	_Log_Enhance_();
+	_Gamma_Enhance_();
 	
 	//cin.get();
 
