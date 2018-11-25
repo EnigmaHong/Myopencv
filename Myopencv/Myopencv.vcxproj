@@ -18,6 +18,9 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{BC9C2EB9-76A5-4FC0-8485-DA7DA70A398B}</ProjectGuid>
@@ -70,13 +73,13 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>E:\ZZH\Opencv\SaveFile_opencv\opencv3_1\opencv\build\include;$(IncludePath)</IncludePath>
+    <IncludePath>D:\ZZH\Opencv\SaveFile_opencv\opencv3_1\opencv\build\include;E:\ZZH\Opencv\SaveFile_opencv\opencv3_1\opencv\build\include;$(IncludePath)</IncludePath>
     <ReferencePath>E:\ZZH\Opencv\SaveFile_opencv\opencv3_1\opencv\build\x64\vc14\lib;$(ReferencePath)</ReferencePath>
-    <LibraryPath>E:\ZZH\Opencv\SaveFile_opencv\opencv3_1\opencv\build\x64\vc14\lib;$(LibraryPath)</LibraryPath>
+    <LibraryPath>D:\ZZH\Opencv\SaveFile_opencv\opencv3_1\opencv\build\x64\vc14\lib;E:\ZZH\Opencv\SaveFile_opencv\opencv3_1\opencv\build\x64\vc14\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>E:\ZZH\Opencv\SaveFile_opencv\opencv3_1\opencv\build\include;$(IncludePath)</IncludePath>
-    <LibraryPath>E:\ZZH\Opencv\SaveFile_opencv\opencv3_1\opencv\build\x64\vc14\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\ZZH\Opencv\SaveFile_opencv\opencv3_1\opencv\build\include;E:\ZZH\Opencv\SaveFile_opencv\opencv3_1\opencv\build\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\ZZH\Opencv\SaveFile_opencv\opencv3_1\opencv\build\x64\vc14\lib;E:\ZZH\Opencv\SaveFile_opencv\opencv3_1\opencv\build\x64\vc14\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -126,9 +129,6 @@
       <AdditionalDependencies>opencv_world310.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="main.cpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
