@@ -1,0 +1,2 @@
+# Myopencv
+just learning opencv
