@@ -26,5 +26,8 @@
     <ClInclude Include="ConectDomain.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="_ZZH_.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

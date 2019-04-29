@@ -1,19 +1,15 @@
-﻿#include <opencv2/highgui.hpp>
-#include <opencv2/opencv.hpp>
-#include <cstdlib>
-#include <windows.h>
+﻿#include "_ZZH_.hpp"
+/*
+#include <_ZZH_.hpp>和#include"_ZZH_.hpp"的区别
+<_ZZH_.hpp>是通知编译器在预处理时要包含开发环境中提供的名为_ZZH_.hpp的头文件
+"_ZZH_.hpp"是要求编译器在预处理时优先包含编程者指定路径下的名为_ZZH_.hpp的头文件
+如果在指定路径下没有发现名为_ZZH_.hpp的头文件，则使用系统提供的同名头文件。
+*/
 #include <iostream>
-#include <vector>
-#include<opencv2/imgcodecs/imgcodecs_c.h>
-#include <opencv2/core/core.hpp>
-#include <opencv2/core/mat.hpp>
-#include <ConectDomain.h>
-#include <iomanip>
 
 #define m_PI 3.14159265358979323846;
 
-using namespace std;
-using namespace cv;
+
 Mat gaussian_kernal(int kernelRowSize, int kernelColSize, double sigma0);
 Mat HSV2RGB(Mat src);
 
@@ -1025,19 +1021,6 @@ void _MaxLiantongyu_(Mat img) {
 	
 }
 
-int _Image_process_() {
-	Mat img_test = imread("view33.jpg");
-	if (img_test.empty()) {
-		cout << "打开图片失败，请重新检查!" << endl;
-		return -1;
-	}
-	
-	//_Hightlightremove_matlab(img_test);
-	//_Hightlightremove_matlab2(img_test);
-
-	return -1;
-}
-
 bool check(string str) {
 	for (int i = 0; i < str.length(); i++) {
 		if ((str[i] > '9' || str[i] < '0') && (str[i] != '.')) {
@@ -1046,6 +1029,18 @@ bool check(string str) {
 	}
 	return true;
 }
+
+
+
+
+
+int _Image_process_() {
+	Mat img = imread("guge.jpg");
+	_image_enhance_(img);
+	waitKey();
+	return -1;
+}
+
 int main()
 {
 
